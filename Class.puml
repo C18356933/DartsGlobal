@@ -1,0 +1,203 @@
+@startuml
+class com.example.dartsglobal.Local {
+~ Button match
+~ Button singles
+~ Button doubles
+~ Button treble
+~ Button atb
+# void onCreate(Bundle)
+}
+class com.example.dartsglobal.Trebles {
+- TextView treble
+- Button b1
+- String dS
+- int t
+# void onCreate(Bundle)
+- void displaySingle()
+- void displayScore()
+}
+class com.example.dartsglobal.models.Requests {
+- String playerOneId
+- String playerOneName
+- String requestId
+- String status
++ <<Create>> Requests()
++ <<Create>> Requests(String,String,String,String)
++ String getPlayerOneId()
++ void setPlayerOneId(String)
++ String getPlayerOneName()
++ void setPlayerOneName(String)
++ String getRequestId()
++ void setRequestId(String)
++ String getStatus()
++ void setStatus(String)
+}
+class com.example.dartsglobal.Singles {
+- TextView single
+- Button b1
+- String dS
+- int t
+# void onCreate(Bundle)
+- void displaySingle()
+- void displayScore()
+}
+class com.example.dartsglobal.GameRequestActivity {
+- ActivityGameRequestBinding binding
+- DatabaseReference requestRef
+- FirebaseAuth mAuth
+~ ArrayList<Requests> requestsArrayList
+# void onCreate(Bundle)
+# void onStart()
+- void getRequests()
+- void addNameDialog()
+- void addRequest(String,Dialog)
++ void onPlayClick(Requests)
+- void startGame(String,Dialog,Requests)
+}
+class com.example.dartsglobal.ATB {
+- EditText num
+- Button b1
+- String n
+- int score
+# void onCreate(Bundle)
+- void displayScore()
+}
+class com.example.dartsglobal.RegisterActivity {
+~ TextView alreadyHaveAccount
+~ EditText inputEmail
+~ Button buttonRegister
+~ String emailCheck
+~ ProgressDialog progressDialog
+~ FirebaseAuth mAuth
+~ FirebaseUser mUser
+# void onCreate(Bundle)
+- void PerformAuthentication()
+- void sendUserToNextActivity()
+}
+class com.example.dartsglobal.Online {
+- TextView player1
+- TextView player1TV
+- String remaining1
+- EditText CS
+- String current
+- Button b0
++ int game
+- String playerUniqueID
+~ DatabaseReference databaseReference
+- boolean opponentFound
+- String opponentUniqueID
+- String status
+- String playerTurn
+- String connectionID
+~ ValueEventListener turnsEventListener
+- String gameId
+- DatabaseReference gameRef
+- FirebaseAuth mAuth
+- String playerOneId
+- String playerTwoId
+- String score
+# void onCreate(Bundle)
+- void changeTurn()
+- void clear()
+- void displayCurrent()
+}
+class com.example.dartsglobal.adapter.RequestAdapter {
+- Context context
+~ ArrayList<Requests> requestsArrayList
+~ RequestAdapter.OnItemClickListener mListener
++ <<Create>> RequestAdapter(Context,ArrayList<Requests>)
++ void setOnItemClickListener(OnItemClickListener)
++ ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(ViewHolder,int)
++ int getItemCount()
+}
+interface com.example.dartsglobal.adapter.RequestAdapter.OnItemClickListener {
+~ void onPlayClick(Requests)
+}
+class com.example.dartsglobal.adapter.RequestAdapter.ViewHolder {
+- CustomRequestLayoutBinding binding
++ <<Create>> ViewHolder(CustomRequestLayoutBinding)
++ void bind(Requests)
+}
+class com.example.dartsglobal.Match {
+~ Button FO1
+~ Button T01
+# void onCreate(Bundle)
+}
+class com.example.dartsglobal.Doubles {
+- TextView treble
+- Button b0
+- String dS
+- int t
+# void onCreate(Bundle)
+- void displaySingle()
+- void displayScore()
+}
+class com.example.dartsglobal.FiveZeroOne {
+- TextView player1
+- String remaining1
+- EditText CS
+- String current
+- Button b0
++ int game
+# void onCreate(Bundle)
+- void clear()
+- void displayCurrent()
+- void displayP1()
+- void displayP2()
+}
+class com.example.dartsglobal.MainActivity {
+~ TextView createnewAccount
+~ EditText inputEmail
+~ Button buttonLogin
+~ String emailCheck
+~ ProgressDialog progressDialog
+~ FirebaseAuth mAuth
+~ FirebaseUser mUser
+~ ImageView googleButton
+# void onCreate(Bundle)
+- void PerformLogin()
+- void sendUserToNextActivity()
+}
+class com.example.dartsglobal.Home {
+~ Button Online
+~ Button Local
+~ Button Logout
+~ FirebaseAuth mAuth
+~ FirebaseUser mUser
+# void onCreate(Bundle)
+}
+class com.example.dartsglobal.ThreeZeroOne {
+- TextView player1
+- String remaining1
+- EditText CS
+- String current
+- Button b0
++ int game
+# void onCreate(Bundle)
+- void clear()
+- void displayCurrent()
+- void displayP1()
+- void displayP2()
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.Local
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.Trebles
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.Singles
+com.example.dartsglobal.OnItemClickListener <|.. com.example.dartsglobal.GameRequestActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.GameRequestActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.ATB
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.RegisterActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.Online
+com.example.dartsglobal.adapter.Adapter <|-- com.example.dartsglobal.adapter.RequestAdapter
+com.example.dartsglobal.adapter.RequestAdapter +.. com.example.dartsglobal.adapter.RequestAdapter.OnItemClickListener
+com.example.dartsglobal.adapter.RequestAdapter +.. com.example.dartsglobal.adapter.RequestAdapter.ViewHolder
+com.example.dartsglobal.adapter.ViewHolder <|-- com.example.dartsglobal.adapter.RequestAdapter.ViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.Match
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.Doubles
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.FiveZeroOne
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.Home
+androidx.appcompat.app.AppCompatActivity <|-- com.example.dartsglobal.ThreeZeroOne
+@enduml

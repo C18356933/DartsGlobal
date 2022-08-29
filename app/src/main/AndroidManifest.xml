@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.dartsglobal">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DartsGlobal">
+        <activity
+            android:name=".GameRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Trebles"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThreeZeroOne"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FiveZeroOne"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ATB"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Doubles"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Singles"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Match"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Local"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Online"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Home"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

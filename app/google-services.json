@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "416561877163",
+    "project_id": "darts-global-d6a5a",
+    "storage_bucket": "darts-global-d6a5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416561877163:android:3d1cfb0a440aef27d3e7ee",
+        "android_client_info": {
+          "package_name": "com.example.dartsglobal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416561877163-nkoecjacbgrbsdarh3khkk9ghj1o3a7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2kjnoKbdJy8OeTg_XmoUUF43slfJ7jac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416561877163-nkoecjacbgrbsdarh3khkk9ghj1o3a7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
